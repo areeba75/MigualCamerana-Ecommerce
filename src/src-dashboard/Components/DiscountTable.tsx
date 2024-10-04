@@ -15,7 +15,7 @@ const columnsData = [
 const DiscountTable = () => {
   const [discounts, setDiscounts] = useState([]);
   const [visibleColumns, setVisibleColumns] = useState(
-    columnsData.map((_, index) => index < 8) // Show first 4 columns initially
+    columnsData.map((_, index) => index < 8) 
   );
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -27,7 +27,7 @@ const DiscountTable = () => {
         const response = await fetch("http://127.0.0.1:8000/store/discounts/");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
-        setDiscounts(data); // Set the fetched discounts data
+        setDiscounts(data); 
       } catch (error) {
         console.error("Error fetching discounts:", error);
       }
@@ -70,9 +70,7 @@ const DiscountTable = () => {
         <p className='text-2xl font-bold text-[#303030]'>Discounts</p>
       </div>
 
-      {/* Combined Filter and Table Container */}
-      <div className="bg-white rounded-lg shadow-md p-4 mt-4"> {/* Added background and padding */}
-        {/* Dropdown button */}
+      <div className="bg-white rounded-lg shadow-md p-4 mt-4"> 
         <div className="flex justify-end">
           <div className="relative inline-block" ref={dropdownRef}>
             <button
@@ -82,7 +80,6 @@ const DiscountTable = () => {
               <span><IoFilterSharp /></span>
             </button>
 
-            {/* Dropdown content */}
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 w-60 bg-white border rounded shadow-lg z-10 h-[300px] overflow-y-auto">
                 {columnsData.map((column, index) => (
@@ -103,7 +100,6 @@ const DiscountTable = () => {
           </div>
         </div>
 
-        {/* Table */}
         <div className="overflow-x-auto mt-4">
           <table className="min-w-full table-auto border-collapse">
             <thead>

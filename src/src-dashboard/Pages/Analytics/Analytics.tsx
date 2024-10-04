@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import Calendar from '../../Components/Calendar/Calendar'; // Update this import to point to your new Calendar component
+import Calendar from '../../Components/Calendar/Calendar'; 
 import LineChart from '../../Components/Charts/LineChart';
 import { CiCalendar } from "react-icons/ci";
 import useOutsideClick from '../../Components/Dropdown/useOutsideClick';
@@ -19,7 +19,6 @@ const Analytics: React.FC = () => {
     }
   });
 
-  // Current Date and yesterDay Date
   const currentDate = new Date();
   let dateoption : Intl.DateTimeFormatOptions = {month: "short", day: 'numeric', year:'numeric'} 
   let dateFormate = currentDate.toLocaleDateString('en-US', dateoption)
@@ -88,10 +87,10 @@ const Analytics: React.FC = () => {
       y: {
         title: {
           display: true,
-          text: 'Rs', // put here your own unit like: currency, percentage, or empty, etc...
+          text: 'Rs', 
         },
         min: 0,
-        max: 10,   // Enter here 
+        max: 10, 
         ticks: {
           stepSize: 5,
         },
@@ -101,13 +100,12 @@ const Analytics: React.FC = () => {
   
 
   const handleCalendarToggle = ():any => {
-    setShowCalendar((prevState) => !prevState); // Toggle the state
+    setShowCalendar((prevState) => !prevState); 
   };
 
   return (
     <div className="sm:px-8 py-4">
       <section className='px-4 mb-4'>
-        {/* top content */}
         <div>
           <p className="text-xl font-bold text-slate-900/90">Analytics</p>
         </div>
@@ -126,9 +124,7 @@ const Analytics: React.FC = () => {
               )}
             </div>
 
-            {/* <div>
-              <button className="btn-custom">Compare to: Yesterday</button>
-            </div> */}
+          
           </div>
 
           <div className="flex justify-center gap-4">
@@ -143,17 +139,8 @@ const Analytics: React.FC = () => {
         </div>
       </section>
       
-      {/* Cards content */}
       <div className="sm:p-4 sm:mt-4 flex flex-wrap gap-4">
-        {/* for backend integration use the below looping part */}
 
-        {/* {
-          backendData.map((index) => (
-            <div key={index.id}>
-              ...
-            </div>
-          ))
-        } */}
 
         <LineChart
           mainHeadline="Total Sales"

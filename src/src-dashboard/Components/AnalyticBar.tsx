@@ -13,7 +13,7 @@ const AnalyticBar = () => {
   
     const handleOptionClick = (option:string) => {
       setSelectedOption(option);
-      setIsOpen(false); // Close 
+      setIsOpen(false);  
      
 
       
@@ -56,7 +56,6 @@ const AnalyticBar = () => {
                     <p className="lg:text-base text-sm font-semibold">Returns</p>
                     <div>
                         <span className="flex "><p className="font-semibold">0</p><IoRemoveOutline className='text-xl ml-2 mt-1'/></span>
-                        {/* <hr className="w-[40px] h-[2px] bg-sky-300 ml-auto -mt-3"/> */}
                     </div>
                 </Link>
                 <hr className="w-[1px] h-[70px] bg-gray-300 mx-4"/>

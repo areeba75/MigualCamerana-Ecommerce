@@ -1,9 +1,9 @@
 import Country from '../Country'
 import CountryCodeInput from './CountryCodeInput'
 import { useState } from 'react';
+import React from 'react';
 
 const DefaultAddress = () => {
-    // country
     const [selectedName, setSelectedName] = useState('');
     const [showDropdonName, setShowDropdonName] = useState(false);
   
@@ -11,7 +11,6 @@ const DefaultAddress = () => {
       setSelectedName(name);
       setShowDropdonName(false);
     };
-    // country code
     const [selectedCod, setSelectedCod] = useState('');
     const [showDropdown, setShowDropdown] = useState(false);
   
@@ -29,7 +28,6 @@ const DefaultAddress = () => {
             <div>
              <label className='text-sm p-1' htmlFor="">Country/region</label>
                 <div className="flex space-x-2 ">
-                    {/* <Country /> */}
                     <div className=' w-full relative space-y-4'>
 
                                     <input
@@ -113,7 +111,6 @@ const DefaultAddress = () => {
             <div>
              <label className='text-sm p-1' htmlFor="">Phone</label>
                 <div className="flex space-x-2 ">
-                    {/* <CountryCodeInput/> */}
                     <div className='relative w-[80px]' >
 
                                     <input

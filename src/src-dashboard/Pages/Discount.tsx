@@ -33,7 +33,6 @@ const Discount = () => {
                     <p className="text-sm w-full md:w-1/3 m-auto py-4">Create discount codes and automatic discounts that apply at checkout. You can also use discounts with compare at prices.</p>
                 </div>
 
-                {/* Change this div */}
                 <div className='flex gap-1 justify-center'>
                     <Link to='/admin/discount/createDiscount'><button className='flex bg-gradient-to-b from-black/80 to-black/60 hover:bg-black text-sm font-bold rounded-lg px-2 py-1.5 text-white'><IoMdAdd className="mr-1 mt-0.5" />Create Discount </button>
                     </Link>

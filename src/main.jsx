@@ -5,7 +5,6 @@ import App from '../src/Art-Gallery/src-miguel/App.jsx'
 
 
 import AdminApp from './src-dashboard/AdminApp.tsx'
-// import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

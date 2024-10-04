@@ -12,7 +12,7 @@ const ProductAnalyticBar = () => {
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
-    setIsOpen(false); // Close the dropdown
+    setIsOpen(false);
   };
 
   return (

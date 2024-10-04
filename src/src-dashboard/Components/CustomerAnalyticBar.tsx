@@ -11,7 +11,7 @@ const CustomerAnalyticBar = () => {
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-    setIsOpen(false); // Close the dropdown
+    setIsOpen(false); 
   };
 
   return (
@@ -28,7 +28,6 @@ const CustomerAnalyticBar = () => {
             </button>
           </div>
 
-          {/* Total Customers */}
           <div className="flex items-center px-4">
             <Link to={'/'} className="hover:bg-[#f1f1f1] hover:rounded-lg p-2 flex flex-col items-center">
               <p className="lg:text-base text-sm font-semibold">Total Customers</p>
@@ -41,7 +40,6 @@ const CustomerAnalyticBar = () => {
 
           <hr className="w-[1px] h-[70px] bg-gray-300" />
 
-          {/* New Customers */}
           <div className="flex items-center px-4">
             <Link to={'/'} className="hover:bg-[#f1f1f1] hover:rounded-lg p-2 flex flex-col items-center">
               <p className="lg:text-base text-sm font-semibold">New Customers</p>
@@ -54,7 +52,6 @@ const CustomerAnalyticBar = () => {
 
           <hr className="w-[1px] h-[70px] bg-gray-300" />
 
-          {/* Active Customers */}
           <div className="flex items-center px-4">
             <Link to={'/'} className="hover:bg-[#f1f1f1] hover:rounded-lg p-2 flex flex-col items-center">
               <p className="lg:text-base text-sm font-semibold">Active Customers</p>
@@ -67,7 +64,6 @@ const CustomerAnalyticBar = () => {
 
           <hr className="w-[1px] h-[70px] bg-gray-300" />
 
-          {/* Customer Retention Rate */}
           <div className="flex items-center px-4">
             <Link to={'/'} className="hover:bg-[#f1f1f1] hover:rounded-lg p-2 flex flex-col items-center">
               <p className="lg:text-base text-sm font-semibold">Retention Rate</p>
@@ -80,7 +76,6 @@ const CustomerAnalyticBar = () => {
 
           <hr className="w-[1px] h-[70px] bg-gray-300" />
 
-          {/* Churn Rate */}
           <div className="flex items-center px-4">
             <Link to={'/'} className="hover:bg-[#f1f1f1] hover:rounded-lg p-2 flex flex-col items-center">
               <p className="lg:text-base text-sm font-semibold">Churn Rate</p>
@@ -93,7 +88,6 @@ const CustomerAnalyticBar = () => {
 
           <hr className="w-[1px] h-[70px] bg-gray-300" />
 
-          {/* Customer Feedback Score */}
           <div className="flex items-center px-4">
             <Link to={'/'} className="hover:bg-[#f1f1f1] hover:rounded-lg p-2 flex flex-col items-center">
               <p className="lg:text-base text-sm font-semibold">Feedback Score</p>

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { IoFilterSharp } from "react-icons/io5";
 import order_main from '../assets/order_main.png';
-import ProductAnalyticBar from './ProductAnalyticBar'; // Import the analytic bar
+import ProductAnalyticBar from './ProductAnalyticBar';
 
 const columnsData = [
   "id", "title", "description", "vendor", "product_type", "tags", "variants", "images", "price", 
@@ -9,7 +9,6 @@ const columnsData = [
   "dimensions", "height", "width", "depth", "seo_title", "seo_description", "url_handle", "template"
 ];
 
-// Utility function to capitalize the first letter of a string
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
@@ -20,7 +19,6 @@ const ProductTable = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Fetch products from the API
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -35,7 +33,6 @@ const ProductTable = () => {
     fetchProducts();
   }, []);
 
-  // Handle outside clicks for dropdown
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -70,12 +67,9 @@ const ProductTable = () => {
         <p className='text-2xl font-bold text-[#303030]'>Products</p>
       </div>
 
-      {/* Add the Product Analytic Bar here */}
-      <ProductAnalyticBar className="mb-8" /> {/* Increased margin-bottom for analytic bar */}
+      <ProductAnalyticBar className="mb-8" /> 
 
-      {/* Container for filter and table */}
-      <div className="bg-white p-4 rounded shadow mt-4"> {/* Added margin-top */}
-        {/* Dropdown button */}
+      <div className="bg-white p-4 rounded shadow mt-4">
         <div className="flex justify-end mb-4" ref={dropdownRef}>
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none"
@@ -84,7 +78,6 @@ const ProductTable = () => {
             <span><IoFilterSharp /></span>
           </button>
 
-          {/* Dropdown content */}
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-10 h-[300px] overflow-y-auto">
               {columnsData.map((column, index) => (
@@ -104,7 +97,6 @@ const ProductTable = () => {
           )}
         </div>
 
-        {/* Conditional rendering for products */}
         {products.length === 0 ? (
           <div className="bg-white py-3 rounded-xl text-center mb-6">
             <img src={order_main} className="m-auto" alt="Order Placeholder" />
@@ -122,7 +114,7 @@ const ProductTable = () => {
                 <tr>
                   {columnsData.map((column, index) =>
                     visibleColumns[index] && (
-                      <th key={index} className="border px-6 py-4 bg-[#D9D9D9]"> {/* Increased padding */}
+                      <th key={index} className="border px-6 py-4 bg-[#D9D9D9]">
                         {capitalizeFirstLetter(column.replace(/_/g, ' '))}
                       </th>
                     )
@@ -134,7 +126,7 @@ const ProductTable = () => {
                   <tr key={product.id} className="hover:bg-gray-100 transition-colors">
                     {columnsData.map((column, index) =>
                       visibleColumns[index] && (
-                        <td key={index} className="border px-6 py-4"> {/* Increased padding */}
+                        <td key={index} className="border px-6 py-4"> 
                           {product[column] !== null ? product[column].toString() : "N/A"}
                         </td>
                       )

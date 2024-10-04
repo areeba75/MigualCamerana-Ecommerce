@@ -40,7 +40,7 @@ const columnsData = [
 const Order = () => {
     const [ordrs, setOrdrs] = useState([]);
     const [visibleColumns, setVisibleColumns] = useState(
-      columnsData.map((_, index) => index < 10) // Show first 10 columns initially
+      columnsData.map((_, index) => index < 10) 
     );
   
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -52,7 +52,7 @@ const Order = () => {
           const response = await fetch("http://127.0.0.1:8000/store/orders/");
           if (!response.ok) throw new Error("Network response was not ok");
           const data = await response.json();
-          setOrdrs(data); // Set the fetched orders data
+          setOrdrs(data); 
         } catch (error) {
           console.error("Error fetching orders:", error);
         }
@@ -104,7 +104,7 @@ const Order = () => {
     };
     const [moreAction, setMoreAction] = useState(false);
     const [showAnalytic, setShowAnalytic] = useState(false);
-    const [orders, setOrders] = useState([]); // State for orders
+    const [orders, setOrders] = useState([]); 
     const dropdownRef = useRef<HTMLUListElement>(null);
 
     const openDropDown = () => {
@@ -119,7 +119,7 @@ const Order = () => {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setMoreAction(false); // Close dropdown
+                setMoreAction(false);
                 setShowAnalytic(false);
             }
         };
@@ -130,13 +130,12 @@ const Order = () => {
         };
     }, []);
 
-    // Fetch orders (you can adjust this function as needed)
     useEffect(() => {
         const fetchOrders = async () => {
             try {
                 const response = await fetch("http://127.0.0.1:8000/store/orders/");
                 const data = await response.json();
-                setOrders(data); // Set the fetched orders data
+                setOrders(data); 
             } catch (error) {
                 console.error("Error fetching orders:", error);
             }
@@ -321,9 +320,7 @@ const Order = () => {
                         </div>
                     </div>
                 ) : (
-                    // <OrderTable orders={orders} /> 
                     <div className="p-4">
-                    {/* Dropdown button */}
                     <div className="flex justify-end">
                       <div className="relative inline-block" ref={dropdownRf}>
                         <button
@@ -333,7 +330,6 @@ const Order = () => {
                           <span><IoFilterSharp /></span>
                         </button>
               
-                        {/* Dropdown content */}
                         {isDropdownOpen && (
                           <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-10 h-[300px] overflow-y-auto">
                             {columnsData.map((column, index) => (
@@ -354,7 +350,6 @@ const Order = () => {
                       </div>
                     </div>
               
-                    {/* Table */}
                     <div className="overflow-x-auto mt-4">
                       <table className="min-w-full table-auto border-collapse">
                         <thead>
@@ -370,7 +365,7 @@ const Order = () => {
                         </thead>
                         <tbody>
                           {ordrs.map((order) => (
-                            <tr key={order.id}> {/* Ensure each row has a unique key */}
+                            <tr key={order.id}> 
                               {columnsData.map((column, index) =>
                                 visibleColumns[index] && (
                                   <td key={index} className="border px-4 py-2">

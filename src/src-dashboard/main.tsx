@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import AdminApp from './AdminApp.tsx';
-// import './indexAdmin.scss';
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 

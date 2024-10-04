@@ -107,10 +107,7 @@ const menuItems = [
     IconBase: <AiFillReconciliation />,
     activeIndex: 1,
     index: 1,
-    // items: [
-    //   { label: 'Drafts', route: '/order/new', activeIndex: 2 },
-    //   { label: "Abandoned" , route: '/order/all', activeIndex: 3 }
-    // ]
+   
   },
   {
     title: "Products",
@@ -120,11 +117,7 @@ const menuItems = [
     index: 2,
     items: [
       { label: "Collections", route: "/admin/prooduct/coollection", activeIndex: 5 },
-      // {  route: '/product/collection/new', activeIndex: 33 },
-      // { label: 'Inventory', route: '/product/inventory', activeIndex: 6 },
-      // { label: 'Purchase orders', route: '/product/purchase-orders', activeIndex: 7 },
-      // { label: 'Transfers', route: '/product/transfers', activeIndex: 8 },
-      // { label: 'Gift Cards', route: '/product/gift-cards', activeIndex: 9 }
+
     ],
   },
   {
@@ -134,43 +127,20 @@ const menuItems = [
     activeIndex: 10,
     index: 3,
     items: [
-      // { label: 'Segments', route: '/customers/segments', activeIndex: 11 },
-      // { label: 'Segments', route: '/customers/segments', }
+
     ],
   },
-  // {
-  //   title: 'Content',
-  //   route: '/content',
-  //   IconBase: <TfiGallery />,
-  //   activeIndex: 12,
-  //   index: 4,
-  //   items: [
-  //     { label: 'Metaobjects', route: '/content/metaobjects', activeIndex: 13 },
-  //     { label: 'Files', route: '/content/files', activeIndex: 14 }
-  //   ]
-  // },
+
   {
     title: "Analytics",
     route: "/admin/analytics",
     IconBase: <SiGoogleanalytics />,
     activeIndex: 15,
     index: 5,
-    // items: [
-    //   { label: 'Reports', route: '/analytics/reports', activeIndex: 16 },
-    //   { label: 'Live View', route: '/analytics/live-view', activeIndex: 17 }
-    // ]
+ 
+    
   },
-  // {
-  //   title: 'Marketing',
-  //   route: '/marketing',
-  //   IconBase: <HiCursorArrowRipple />,
-  //   activeIndex: 18,
-  //   index: 6,
-  //   items: [
-  //     { label: 'Campaigns', route: '/marketing/campaigns', activeIndex: 19 },
-  //     { label: 'Automations', route: '/marketing/automations', activeIndex: 20 }
-  //   ]
-  // },
+
   {
     title: "Discounts",
     route: "/admin/discount",
@@ -191,34 +161,9 @@ const menuItems = [
     index: 9,
     items: [
       { label: "Blog posts", route: "/admin/blog-post", activeIndex: 24, index: 9 },
-      // { label: 'Pages', route: '/online-store/pages', activeIndex: 25 },
-      // { label: 'Navigation', route: '/online-store/navigation', activeIndex: 26 },
-      // { label: 'Preferences', route: '/online-store/preferences', activeIndex: 27 }
+   
     ],
   },
 
-  // {
-  //   title: 'Point of Sale',
-  //   route: '/point-of-sale',
-  //   IconBase: <FaFileInvoiceDollar />,
-  //   activeIndex: 28,
-  //   index: 10,
-  //   items: [
-  //     { label: 'Staff', route: '/point-of-sale/staff', activeIndex: 29 },
-  //     { label: 'Locations', route: '/point-of-sale/locations', activeIndex: 30 },
-  //     { label: 'Settings', route: '/point-of-sale/settings', activeIndex: 31 }
-  //   ]
-  // },
-  // {
-  //   index: 11,
-  //   title: 'Add apps',
-  //   IconBase: <MdArrowForwardIos />,
-  // },
-  // {
-  //   title: 'Add Apps',
-  //   route: '#',
-  //   IconBase: <AiOutlinePlusCircle />,
-  //   activeIndex: 32,
-  //   index: 12,
-  // },
+  
 ];

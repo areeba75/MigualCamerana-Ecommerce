@@ -17,7 +17,6 @@ const styles = {
   },
 };
 
-// Track Quantity Component
 const TrackQuantity = () => {
   const [isChecked, setIsChecked] = useState(true);
   const [barCode, setBarCode] = useState(false);
@@ -88,7 +87,6 @@ const TrackQuantity = () => {
   );
 };
 
-// Shipping Component
 const Shipping = ({ onWeightChange, onWeightUnitChange }) => {
   const [isChecked, setIsChecked] = useState(true);
   const [weight, setWeight] = useState("0.0");
@@ -169,7 +167,6 @@ const Shipping = ({ onWeightChange, onWeightUnitChange }) => {
   );
 };
 
-// Status Component
 type DropdownItem = {
   id: string;
   label: string;
@@ -223,7 +220,6 @@ const Status = ({ onStatusChange }) => {
   );
 };
 
-// Country Component
 import { countryCodes } from './AddProductsComponents/CountryCodeInput';
 
 const Country = () => {
@@ -251,7 +247,6 @@ const Country = () => {
         <input type="text" placeholder='Search By Product KeyWord Or Code' className='w-full p-2 border border-black rounded-lg' />
       </div>
 
-      {/* Dropdown List */}
       {showDropdown && (
         <div
           style={{
@@ -273,7 +268,6 @@ const Country = () => {
               style={{ width: '100%', padding: '8px', cursor: 'pointer', borderBottom: '1px solid #ddd' }}
             >
               {country.name}
-              {/* ({country.code}) */}
             </div>
           ))}
         </div>
@@ -282,7 +276,6 @@ const Country = () => {
   )
 };
 
-// Product Category Component
 const ProductCategory = ({ selectedCategory, onCategoryChange }) => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -331,7 +324,6 @@ const ProductCategory = ({ selectedCategory, onCategoryChange }) => {
   );
 };
 
-// Main NewProduct Component
 const NewProduct = () => {
   const [shipping, setShipping] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -437,7 +429,6 @@ const NewProduct = () => {
 
   return (
     <section style={styles.h1} className="space-y-4 flex xl:flex-row flex-col justify-center sm:px-4 xl:px-0 xl:space-x-3 py-6 ">
-      {/* Left Section */}
       <div className="w-full xl:w-1/2 space-y-6 m-auto md:m-0">
         <div className='flex items-center'>
           <Link to={'/admin/prooduct'}>
@@ -492,7 +483,6 @@ const NewProduct = () => {
           </div>
         </div>
 
-        {/* Pricing Section */}
         <div className="bg-white shadow-lg space-y-3 lg:space-y-0 sm:rounded-lg px-4 py-2 border">
           <div className="border-b py-2">
             <h1 style={styles.h1} className="font-bold text-base mb-3">Pricing</h1>
@@ -608,7 +598,6 @@ const NewProduct = () => {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="xl:w-1/4 w-full flex flex-col gap-4 xl:mt-10 xl:pt-15 xl:py-12">
         <div className="bg-white shadow-lg sm:rounded-lg border p-3">
           <Status onStatusChange={handleStatusChange} />

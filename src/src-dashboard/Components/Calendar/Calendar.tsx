@@ -5,18 +5,16 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const DateFilterContainer = ({closeHandler}:any) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [startDate, setStartDate] = useState(new Date(new Date().setMonth(new Date().getMonth() - 1))); // Set to previous month
+  const [startDate, setStartDate] = useState(new Date(new Date().setMonth(new Date().getMonth() - 1)));
   const [selectedRange, setSelectedRange] = useState("today");
-  const [data, setData] = useState(null); // State to store fetched or displayed data
-  
+  const [data, setData] = useState(null); 
   
   const handleRangeChange = (range) => {
     setSelectedRange(range);
-    // Logic to calculate the startDate based on the selected range
     const today = new Date();
     switch (range) {
       case "today":
-        setStartDate(new Date(today.setMonth(today.getMonth() - 1))); // Previous month
+        setStartDate(new Date(today.setMonth(today.getMonth() - 1))); 
         break;
       case "last7Days":
         setStartDate(new Date(today.setDate(today.getDate() - 7)));
@@ -33,20 +31,17 @@ const DateFilterContainer = ({closeHandler}:any) => {
   };
 
   const handleShowData = () => {
-    // Placeholder logic for displaying or fetching data
     const result = `Displaying data from ${startDate.toDateString()} to ${selectedDate.toDateString()}`;
     setData(result);
-    alert(result); console.log(result); // these 2 for showong data
+    alert(result); console.log(result); 
     closeHandler()
   };
 
   return (
     <>
       <div className=" bg-white mx-auto p-4" >
-        {/* Section 1: Date Range Options */}
         <div className="flex flex-col md:flex-row ">
           <ul className=" bg-white p-2 shadow rounded-md md:w-max">
-            {/* <h2 className="text-lg font-semibold mb-4">Select Range</h2> */}
             <li
               className={`p-1 mb-2 rounded cursor-pointer ${selectedRange === "today" ? "bg-blue-500 text-white" : "bg-gray-200"
                 }`}
@@ -77,7 +72,6 @@ const DateFilterContainer = ({closeHandler}:any) => {
             </li>
           </ul>
 
-          {/* Section 2: Calendar for Start Date (Previous Month) */}
           <div className="flex">
             <div className="p-1 m-auto hidden lg:block">
               <h2 className="text-lg font-semibold mb-4">Select From Date</h2>
@@ -91,7 +85,6 @@ const DateFilterContainer = ({closeHandler}:any) => {
               />
             </div>
 
-            {/* Section 3: Calendar for Selected Date (Current Month) */}
             <div className="flex p-1 m-auto">
               <div>
                 <h2 className="text-lg font-semibold mb-4">Selected Date</h2>

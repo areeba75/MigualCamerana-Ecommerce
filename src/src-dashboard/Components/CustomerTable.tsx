@@ -25,7 +25,7 @@ const columnsData = [
 const DynamicTable = () => {
   const [customers, setCustomers] = useState([]);
   const [visibleColumns, setVisibleColumns] = useState(
-    columnsData.map((_, index) => index < 10) // Show first 10 columns initially
+    columnsData.map((_, index) => index < 10) 
   );
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -37,7 +37,7 @@ const DynamicTable = () => {
         const response = await fetch("http://127.0.0.1:8000/store/customers/");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
-        setCustomers(data); // Set the fetched customer data
+        setCustomers(data); 
       } catch (error) {
         console.error("Error fetching customers:", error);
       }
@@ -78,12 +78,9 @@ const DynamicTable = () => {
     <div className="p-4 space-y-6">
       <h1 className="text-2xl font-bold">Customers</h1>
 
-      {/* Customer Analytics Section */}
       <CustomerAnalyticBar />
 
-      {/* Filter and Table Section */}
       <div className="bg-white p-4 rounded shadow-md">
-        {/* Dropdown button */}
         <div className="flex justify-end mb-4">
           <div className="relative inline-block" ref={dropdownRef}>
             <button
@@ -93,7 +90,6 @@ const DynamicTable = () => {
               <IoFilterSharp />
             </button>
 
-            {/* Dropdown content */}
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-10 h-[300px] overflow-y-auto">
                 {columnsData.map((column, index) => (
@@ -114,7 +110,6 @@ const DynamicTable = () => {
           </div>
         </div>
 
-        {/* Table */}
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto border-collapse">
             <thead>

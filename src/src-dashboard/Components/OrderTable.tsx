@@ -26,7 +26,7 @@ const columnsData = [
 const DynamicTable = () => {
   const [ordrs, setOrdrs] = useState([]);
   const [visibleColumns, setVisibleColumns] = useState(
-    columnsData.map((_, index) => index < 10) // Show first 10 columns initially
+    columnsData.map((_, index) => index < 10) 
   );
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -38,7 +38,7 @@ const DynamicTable = () => {
         const response = await fetch("http://127.0.0.1:8000/store/orders/");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
-        setOrdrs(data); // Set the fetched orders data
+        setOrdrs(data); 
       } catch (error) {
         console.error("Error fetching orders:", error);
       }
@@ -77,7 +77,6 @@ const DynamicTable = () => {
 
   return (
     <div className="p-4">
-      {/* Dropdown button */}
       <div className="flex justify-end">
         <div className="relative inline-block" ref={dropdownRef}>
           <button
@@ -87,7 +86,6 @@ const DynamicTable = () => {
             <span><IoFilterSharp /></span>
           </button>
 
-          {/* Dropdown content */}
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-10 h-[300px] overflow-y-auto">
               {columnsData.map((column, index) => (
@@ -108,7 +106,6 @@ const DynamicTable = () => {
         </div>
       </div>
 
-      {/* Table */}
       <div className="overflow-x-auto mt-4">
         <table className="min-w-full table-auto border-collapse">
           <thead>
@@ -124,7 +121,7 @@ const DynamicTable = () => {
           </thead>
           <tbody>
             {ordrs.map((order) => (
-              <tr key={order.id}> {/* Ensure each row has a unique key */}
+              <tr key={order.id}> 
                 {columnsData.map((column, index) =>
                   visibleColumns[index] && (
                     <td key={index} className="border px-4 py-2">

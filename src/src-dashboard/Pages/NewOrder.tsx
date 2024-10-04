@@ -35,7 +35,6 @@ export const productCategories = [
 ];
 
 const NewProduct = () => {
-  // Country
   const [selectedCod, setSelectedCod] = useState('');
   const [showDropdon, setShowDropdon] = useState(false);
 
@@ -44,7 +43,6 @@ const NewProduct = () => {
     setShowDropdon(false);
   };
 
-  // Shipping
   const [isCheckd, setIsCheckd] = useState(true);
 
   const handleCheckboxChang = () => {
@@ -52,7 +50,6 @@ const NewProduct = () => {
   };
 
 
-  // track quality
   const [isChecked, setIsChecked] = useState(true);
   const[barCode, setBarCode] = useState(false)
 
@@ -62,7 +59,7 @@ const NewProduct = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-  // Product category
+  
   const [selectedCode, setSelectedCode] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -71,36 +68,32 @@ const NewProduct = () => {
     setShowDropdown(false);
   };
 
-  // Editor
   const editorRef = useRef(null);
   const toolbarRef = useRef(null);
-  const quillInstance = useRef<Quill | null>(null); // Properly type the ref
-
+  const quillInstance = useRef<Quill | null>(null);
   useEffect(() => {
     if (editorRef.current && toolbarRef.current && !quillInstance.current) {
       const toolbarOptions = [
         [{ 'header': [1, 2, 3, false] }],
-        ['bold', 'italic', 'underline'],        // Bold, italic, underline
-        [{ 'color': [] }, { 'background': [] }], // Color options
-        [{ 'align': [] }],                      // Text alignment
-        ['blockquote', 'code-block'],           // Blockquote, code block
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }], // Ordered, unordered list
-        [{ 'indent': '-1'}, { 'indent': '+1' }], // Indent, outdent
-        ['image', 'video'],                     // Insert image, video
-        ['clean']                               // Remove formatting
+        ['bold', 'italic', 'underline'],        
+        [{ 'color': [] }, { 'background': [] }], 
+        [{ 'align': [] }],                      
+        ['blockquote', 'code-block'],          
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }], 
+        [{ 'indent': '-1'}, { 'indent': '+1' }], 
+        ['image', 'video'],                
+        ['clean']                           
       ];
   
       quillInstance.current = new Quill(editorRef.current, {
-        theme: 'snow',  
-        modules: { toolbar: toolbarRef.current },  // You may need to pass `toolbarOptions` here instead
+        theme: 'snow', 
+        modules: { toolbar: toolbarRef.current },  
       });
     }
   
-    // Cleanup function
     return () => {
       if (quillInstance.current) {
-        quillInstance.current = null;  // Clean up the quill instance
-      }
+        quillInstance.current = null; 
     };
   }, []);
 
@@ -109,7 +102,6 @@ const NewProduct = () => {
     <>
     <section className="sm:px-5 pb-24">
       
-      {/* Left Section */}
       <div className='flex justify-center lg:flex-row flex-col py-5'>
         <div className='flex items-center w-3/4'>
           <Link to={'/admin/order'}><MdArrowBack className='text-xl' /></Link>
@@ -132,7 +124,6 @@ const NewProduct = () => {
                 </div>
 
                 <div>
-                  {/* editor */}
                 <section>
                     <div className="h-auto rounded-lg shadow-md">
                     <div ref={toolbarRef} id="toolbar" className='rounded-t-lg'>
@@ -182,7 +173,6 @@ const NewProduct = () => {
                   Category
                 </label>
                 <div className=" space-x-2 w-full">
-                  {/* <ProductCategory /> */}
                       <section>
                             <div>
                             <div className=' border-black relative w-auto'>
@@ -217,10 +207,9 @@ const NewProduct = () => {
                                   key={index}
                                   onClick={() => handleSelectCode(country.code)}
                                   className='p-2 border-b cursor-pointer'
-                                  // style={{ padding: '8px', cursor: 'pointer', borderBottom: '1px solid #ddd' }}
+                            
                                 >
                                   {country.name}
-                                  {/* ({country.code}) */}
                                 </div>
                               ))}
                             </div>
@@ -239,7 +228,6 @@ const NewProduct = () => {
             </div>
           </div>
 
-          {/* Pricing Section */}
           <div className="bg-white shadow-lg space-y-3 lg:space-y-0 sm:rounded-lg px-4 py-2 border">
             <div className="border-b py-2">
               <h1 className="font-bold text-base pb-2 text-black">Pricing</h1>
@@ -300,7 +288,6 @@ const NewProduct = () => {
           </div>
 
           <div className="bg-white shadow-lg py-4 sm:rounded-lg border">
-            {/* <TrackQuantity /> */}
                   <section>
                         <div className='bg-white rounded-xl px-4 space-y-2' >
                           <h1 className='font-bold text-base text-black'>Inventory</h1>
@@ -353,7 +340,6 @@ const NewProduct = () => {
           </div>
 
           <div className="bg-white shadow-lg p-3 sm:rounded-lg border">
-            {/* <Shipping /> */}
                 <section>
                   <div className='bg-white rounded-lg py-4 space-y-4'>
                     <h1 className='font-bold text-base text-black'>Shipping</h1>
@@ -433,7 +419,6 @@ const NewProduct = () => {
                        style={{ width: '100%', padding: '8px', cursor: 'pointer', borderBottom: '1px solid #ddd' }}
                      >
                        {country.name}
-                        {/* ({country.code}) */}
                      </div>
                    ))}
                  </div>
@@ -477,11 +462,8 @@ const NewProduct = () => {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className="w-full xl:w-1/3 space-y-4 m-auto md:m-0">
-          {/* <div className="bg-white shadow-lg p-3 sm:rounded-lg">
-            <Status />
-          </div> */}
+         
 
           <div className="bg-white shadow-lg p-4 sm:rounded-lg border space-y-2">
             <h1 className='font-bold text-black'>Product Organization</h1>

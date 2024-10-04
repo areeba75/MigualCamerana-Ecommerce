@@ -22,5 +22,4 @@ declare module '*.png' {
     export default value;
   }
   
-  // Add declarations for any other file types you plan to use
   

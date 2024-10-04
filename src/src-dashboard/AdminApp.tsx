@@ -10,7 +10,6 @@ import '../src-dashboard/Pages/Dashboard.css'
 const Analytics = lazy(() => import('../src-dashboard/Pages/Analytics/Analytics'));
 const AdminSideBar = lazy(() => import("../src-dashboard/Components/AdminSideBar/AdminSideBar"));
 const Navbar = lazy(() => import("./Components/Navbar/Naavbar"));
-// const Home = lazy(() => import("../src-dashboard/Pages/Home"));
 const Order = lazy(() => import("../src-dashboard/Pages/Order"));
 const Prooduct = lazy(() => import("./Pages/Prooduct"));
 const Customer = lazy(() => import("../src-dashboard/Pages/customers/Customer"));
@@ -58,7 +57,6 @@ function AdminApp() {
 
               <Route path='/discount' element={<Discount />} />
               <Route path='/discount/createDiscount' element={<CreateDiscount />} />
-              {/* Add the below line and also import it. */}
               <Route path="/discount/discountTable" element={<DiscountTable />} />
 
               <Route path='/blog-post' element={<BlogPosts />} />

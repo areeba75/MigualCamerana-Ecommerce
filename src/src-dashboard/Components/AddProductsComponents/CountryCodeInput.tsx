@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-// List of all country codes
 export const countryCodes = [
   { name: 'Afghanistan', code: '+93' },
   { name: 'Albania', code: '+355' },
@@ -226,7 +225,6 @@ const CountryCodeInput: React.FC = () => {
               onClick={() => handleSelectCod(country.code)}
               style={{ padding: '8px', cursor: 'pointer', borderBottom: '1px solid #ddd' }}
             >
-              {/* {country.name} */}
               ({country.code})
             </div>
           ))}

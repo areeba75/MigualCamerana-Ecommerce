@@ -107,25 +107,20 @@ const AddProductBox = ({ heading, discription, image }: AddProductBoxPropse) => 
         </AccordionSummary>
         <AccordionDetails>
           <div className='flex bg-[#F3F3F3]  p-1 sm:p-4 rounded-lg '>
-            {/* main content */}
             <div className='w-[2%] '>
-              {/* checkbox */}
               <input type="checkbox" />
             </div>
             <div className='sm:w-[64%] sm:px-4 flex flex-col gap-4'>
-              {/* text & buttons */}
               <div className='px-3'>
                 <h2 className='mb-2 font-semibold text-lg text-black'>{heading}</h2>
                 <p className='font-semibold text-black/60'>{discription} <span className='text-[#4C8BDE]'><a href="#">Learn more</a></span></p>
               </div>
               <div className='font-medium text-sm p-1 space-x-2'>
-                {/* buttons */}
                 <Link to={'/admin/order'}><button className='bg-black rounded-lg text-white px-3 py-1 text-sm'>Add product</button></Link>
                 <button className='px-2 py-1 text-sm rounded-lg text-black/70 text-black border border-gray-400'>Import products</button>
               </div>
             </div>
             <div className='hidden sm:block w-[34%] sm:px-4 justify-end items-center'>
-              {/* images */}
               <img src={`${image}`} alt="Sample Image" className='w-24 h-24' />
             </div>
           </div>
@@ -149,12 +144,10 @@ const PointofSale = ({ heading, discription, totalOrder, completedOrder, image }
       <div className='bg-[#FFFFFF] p-4 sm:rounded-lg flex'>
         <div className='sm:w-3/4'>
           <div >
-            {/* card */}
             <h3 className='text-xl font-semibold text-black'>{heading}</h3>
             <p className='font-medium text-black/60'>{discription}</p>
           </div>
           <div>
-            {/* completed */}
             <button className='border border-black-100/10 rounded-lg px-2 py-[2px]'>{completedOrder} {totalOrder}</button>
           </div>
         </div>

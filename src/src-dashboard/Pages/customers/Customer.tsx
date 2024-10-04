@@ -1,5 +1,4 @@
 import { IoMdAdd } from "react-icons/io";
-// import customer_main from '../../assets/customer_main.svg';
 import customermain from "../../Components/imagesAdmin/customer_main.svg"
 
 import { Link } from "react-router-dom";

@@ -203,14 +203,12 @@ interface DropDownOption {
 }
 
 const NewCustomer = () => {
-  // tax examption
   const [isChcked, setIsChcked] = useState(true);
 
   const handleCheckboxChange = () => {
     setIsChcked(!isChcked);
   };
 
-  // country name input
   const [selectedName, setSelectedName] = useState("");
   const [showDropdonName, setShowDropdonName] = useState(false);
 
@@ -218,7 +216,6 @@ const NewCustomer = () => {
     setSelectedName(name);
     setShowDropdonName(false);
   };
-  // country code input
   const [selectedCod, setSelectedCod] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -227,11 +224,9 @@ const NewCustomer = () => {
     setShowDropdown(false);
   };
 
-  // dropdown input
   const [inputValu, setInputValu] = useState("");
   const [showDropdwn, setShowDropdwn] = useState(false);
 
-  // customer overview
   const options = ["English [Default]"];
   const [inputValue, setInputValue] = useState("");
   const [isCheckboxEnabled, setIsCheckboxEnabled] = useState(false);
@@ -266,7 +261,6 @@ const NewCustomer = () => {
       <div className="flex flex-col xl:flex-row justify-center gap-4">
         <div className="xl:w-2/5 space-y-4">
           <div className="">
-            {/* <CustomerOverview /> */}
 
             <section>
               <div>
@@ -300,7 +294,6 @@ const NewCustomer = () => {
                     <label className="text-sm p-1 " htmlFor="">
                       Language
                     </label>
-                    {/* <DropdownInput options={options} /> */}
                     <div className="relative">
                       <input
                         type="text"
@@ -346,7 +339,6 @@ const NewCustomer = () => {
                       Phone
                     </label>
                     <div className="flex space-x-2 ">
-                      {/* <CountryCodeInput /> */}
                       <div className="relative w-[80px]">
                         <input
                           type="text"
@@ -369,7 +361,7 @@ const NewCustomer = () => {
                                   borderBottom: "1px solid #ddd",
                                 }}
                               >
-                                {/* {country.name} */}({country.code})
+                                ({country.code})
                               </div>
                             ))}
                           </div>
@@ -410,7 +402,6 @@ const NewCustomer = () => {
           </div>
 
           <div className="">
-            {/* <DefaultAddress /> */}
             <section className="">
               <div className="space-y-4 p-6 sm:rounded-xl bg-white text-sm">
                 <div >
@@ -422,7 +413,6 @@ const NewCustomer = () => {
                     Country/region
                   </label>
                   <div className="flex space-x-2 ">
-                    {/* <Country /> */}
                     <div className=" w-full relative space-y-4">
                       <input
                         type="text"
@@ -468,7 +458,6 @@ const NewCustomer = () => {
                               }}
                             >
                               {country.name}
-                              {/* ({country.code}) */}
                             </div>
                           ))}
                         </div>
@@ -554,7 +543,6 @@ const NewCustomer = () => {
                     Phone
                   </label>
                   <div className="flex space-x-2 ">
-                    {/* <CountryCodeInput/> */}
                     <div className="relative w-[80px]">
                       <input
                         type="text"
@@ -577,7 +565,7 @@ const NewCustomer = () => {
                                 borderBottom: "1px solid #ddd",
                               }}
                             >
-                              {/* {country.name} */}({country.code})
+                              ({country.code})
                             </div>
                           ))}
                         </div>
@@ -595,7 +583,6 @@ const NewCustomer = () => {
             </section>
           </div>
           <div>
-            {/* <TaxExemptions /> */}
             <section>
               <div className=" font-semibold bg-white sm:rounded-xl p-4 space-y-4">
                 <div>

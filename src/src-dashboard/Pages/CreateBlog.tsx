@@ -1,9 +1,4 @@
-// import Editor from "../Components/DescriptionInput";
-//error
 
-// import BlogOrganization from "../Components/BlogOrganization";
-// import BlogOrganizationBlog from "../Components/BlogOrganizationBlog";
-// import OnlineStore from "../Components/OnlineStore";
 import { Link } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 import { useState, useEffect, useRef } from "react";
@@ -41,8 +36,7 @@ const CreateBlog = () => {
 
   const droopdownItems: DropdownItam[] = [
     { id: 1, label: "Default Blog Posts" },
-    // { id: 2, label: "Option 2" },
-    // { id: 3, label: "Option 3" },
+  
   ];
 
   const haandleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,7 +49,6 @@ const CreateBlog = () => {
     setSelectedItam(item.id);
     setIsDropdownOpan(false);
   };
-  // blog organization blog input
   const [inputVlue, setInputVlue] = useState<string>("");
   const [selectdItem, setSelectdItem] = useState<number | null>(null);
   const [selectedSubItem, setSelectedSubItem] = useState<number | null>(null);
@@ -69,7 +62,6 @@ const CreateBlog = () => {
       label: "Action",
       subItems: [{ id: 102, label: "Create new Blog" }],
     },
-    //   { id: 3, label: "Option 3", subItems: [{ id: 103, label: "Sub Option 3.1" }] },
   ];
 
   const handleInputChang = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,7 +70,7 @@ const CreateBlog = () => {
   };
 
   const handleDropdownClik = (items: DropdownItem) => {
-    setExpandedItemId(expandedItemId === items.id ? null : items.id); // Toggle sub-items
+    setExpandedItemId(expandedItemId === items.id ? null : items.id);
     setSelectdItem(items.id);
   };
 
@@ -87,15 +79,14 @@ const CreateBlog = () => {
     setSelectedSubItem(subItem.id);
     setIsDropdwnOpen(false);
   };
-  // Blog Organization
+  
   const [inputValue, setInputValue] = useState<string>("");
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const dropdownItem: DropdownItm[] = [
     { id: 1, label: "My Store Admin" },
-    // { id: 2, label: "Option 2" },
-    // { id: 3, label: "Option 3" },
+   
   ];
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,20 +103,20 @@ const CreateBlog = () => {
 //   add excerpt
 const editorRf = useRef(null);
 const toolbarRf = useRef(null);
-const quilInstance = useRef<Quill | null>(null); // Properly type the ref
+const quilInstance = useRef<Quill | null>(null); 
 
 useEffect(() => {
   if (editorRf.current && toolbarRf.current && !quilInstance.current) {
     const toolbarOptions = [
       [{ 'header': [1, 2, 3, false] }],
-      ['bold', 'italic', 'underline'],        // Bold, italic, underline
-      [{ 'color': [] }, { 'background': [] }], // Color options
-      [{ 'align': [] }],                      // Text alignment
-      ['blockquote', 'code-block'],           // Blockquote, code block
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }], // Ordered, unordered list
-      [{ 'indent': '-1'}, { 'indent': '+1' }], // Indent, outdent
-      ['image', 'video'],                     // Insert image, video
-      ['clean']                               // Remove formatting
+      ['bold', 'italic', 'underline'],        
+      [{ 'color': [] }, { 'background': [] }], 
+      [{ 'align': [] }],                      
+      ['blockquote', 'code-block'],           
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
+      ['image', 'video'],                     
+      ['clean']                               
     ];
 
     quilInstance.current = new Quill(editorRf.current, {
@@ -141,11 +132,9 @@ useEffect(() => {
   };
 }, []);
 
-  // Editor
   const editorRefs = useRef<(HTMLDivElement | null)[]>([]);
   const toolbarRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const quillInstances = useRef<(Quill | null)[]>([]); // For multiple Quill instances
-
+  const quillInstances = useRef<(Quill | null)[]>([]); 
   useEffect(() => {
     toolbarRefs.current.forEach((toolbarRef, index) => {
       if (
@@ -163,13 +152,12 @@ useEffect(() => {
     return () => {
       quillInstances.current.forEach((quillInstance) => {
         if (quillInstance) {
-          quillInstance = null; // Clean up instances
+          quillInstance = null;
         }
       });
     };
   }, []);
 
-  // Helper to create refs for each editor/toolbar
   const createRefCallback =
     (refsArray: (HTMLDivElement | null)[], index: number) =>
     (el: HTMLDivElement | null) => {
@@ -197,7 +185,6 @@ useEffect(() => {
           </div>
           <div className="text-sm space-y-1 ">
             <h1 className=" text-black">Content</h1>
-            {/* <Editor /> */}
             <div className="h-auto rounded-lg shadow-md">
         <div ref={createRefCallback(toolbarRefs.current, 0)} id="toolbar-0" className="rounded-t-lg">
           <span className="ql-formats">
@@ -250,7 +237,6 @@ useEffect(() => {
           </p>
           <div>
             {editor && (
-            //   <Editor />
               <div className="flex flex-col space-y-2 mt-4">
               <label className='font-semibold' htmlFor="description">Description</label>
               <textarea
@@ -325,7 +311,6 @@ useEffect(() => {
         <div className="bg-[#F7F7F7] p-2 py-6 rounded-lg border space-y-3">
           <h1 className="text-sm font-semibold text-black">Organization</h1>
           <div>
-            {/* <BlogOrganization /> */}
             <div className="relative">
               <label className="text-sm" htmlFor="">
                 Auther
@@ -358,7 +343,6 @@ useEffect(() => {
           </div>
 
           <div>
-            {/* <BlogOrganizationBlog /> */}
             <div className="relative">
               <label className="text-base p-2" htmlFor="">
                 Blog
@@ -413,7 +397,6 @@ useEffect(() => {
         <div className="bg-white rounded-lg border px-2 py-4 space-y-4">
           <h1 className="text-sm font-semibold text-black">Online Store</h1>
           <div>
-            {/* <OnlineStore /> */}
             <div className="relative">
               <label className="text-sm" htmlFor="">
                 Theme template

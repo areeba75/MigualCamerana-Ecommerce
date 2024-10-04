@@ -17,7 +17,6 @@ const Collection = () => {
 
             <div className='flex justify-between'>
                 <p className='text-xl font-semibold'>Collections</p>
-                {/* <button className='bg-gradient-to-b from-black/80 to-black/70 hover:bg-black text-white rounded-lg p-1 font-semibold'>Create collection</button> */}
                 <a className='bg-gradient-to-b text-base px-4 from-black/80 to-black/70 hover:bg-black text-white rounded-lg p-1 font-semibold' href={'/admin/new'}>Create collection</a>
             </div>
 

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React,{ useState, useRef } from "react";
 import useOutsideClick  from './useOutsideClick';
 
 const Dropdown = () => {
@@ -8,7 +8,7 @@ const Dropdown = () => {
 
     useOutsideClick({
         ref: dropdownRef,
-        handler: () => setIsOpen(false), // Set isOpen to false directly
+        handler: () => setIsOpen(false),
     });
 
     return (
