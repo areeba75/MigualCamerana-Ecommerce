@@ -43,6 +43,7 @@ const NewProduct = () => {
     setShowDropdon(false);
   };
 
+  
   const [isCheckd, setIsCheckd] = useState(true);
 
   const handleCheckboxChang = () => {
@@ -59,7 +60,6 @@ const NewProduct = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-  
   const [selectedCode, setSelectedCode] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -70,30 +70,31 @@ const NewProduct = () => {
 
   const editorRef = useRef(null);
   const toolbarRef = useRef(null);
-  const quillInstance = useRef<Quill | null>(null);
+  const quillInstance = useRef<Quill | null>(null); 
+
   useEffect(() => {
     if (editorRef.current && toolbarRef.current && !quillInstance.current) {
       const toolbarOptions = [
         [{ 'header': [1, 2, 3, false] }],
-        ['bold', 'italic', 'underline'],        
+        ['bold', 'italic', 'underline'],       
         [{ 'color': [] }, { 'background': [] }], 
-        [{ 'align': [] }],                      
-        ['blockquote', 'code-block'],          
+        [{ 'align': [] }],                    
+        ['blockquote', 'code-block'],         
         [{ 'list': 'ordered'}, { 'list': 'bullet' }], 
         [{ 'indent': '-1'}, { 'indent': '+1' }], 
-        ['image', 'video'],                
-        ['clean']                           
-      ];
+        ['image', 'video'],                   
+        ['clean']                               
   
       quillInstance.current = new Quill(editorRef.current, {
-        theme: 'snow', 
+        theme: 'snow',  
         modules: { toolbar: toolbarRef.current },  
       });
     }
   
     return () => {
       if (quillInstance.current) {
-        quillInstance.current = null; 
+        quillInstance.current = null;  
+      }
     };
   }, []);
 
@@ -102,6 +103,7 @@ const NewProduct = () => {
     <>
     <section className="sm:px-5 pb-24">
       
+    
       <div className='flex justify-center lg:flex-row flex-col py-5'>
         <div className='flex items-center w-3/4'>
           <Link to={'/admin/order'}><MdArrowBack className='text-xl' /></Link>
@@ -207,7 +209,6 @@ const NewProduct = () => {
                                   key={index}
                                   onClick={() => handleSelectCode(country.code)}
                                   className='p-2 border-b cursor-pointer'
-                            
                                 >
                                   {country.name}
                                 </div>
@@ -463,7 +464,7 @@ const NewProduct = () => {
         </div>
 
         <div className="w-full xl:w-1/3 space-y-4 m-auto md:m-0">
-         
+        
 
           <div className="bg-white shadow-lg p-4 sm:rounded-lg border space-y-2">
             <h1 className='font-bold text-black'>Product Organization</h1>
